@@ -11,7 +11,7 @@ public class Calculator {
             throw new Exception("Please check your input, only enter numbers followed by operators with the same precedence.");
         }
 
-        boolean masterOperator = true;
+        boolean masterOperator = true; //Defines the operator pair allowed i.e. +- or */
         if (seperatedArgumentList.get(1).charAt(0) == '*' || seperatedArgumentList.get(1).charAt(0) == '/') {
             masterOperator = false;
         }
@@ -22,7 +22,7 @@ public class Calculator {
                 Double.parseDouble(seperatedArgumentList.get(2)),
                 masterOperator
         );
-        for (int i = 0; i < ((seperatedArgumentList.size()-3)/2); ++i) {
+        for (int i = 0; i < ((seperatedArgumentList.size()-3)/2); ++i) { //Arguments -2 to skip first finished calculation, -1 to align operators and numbers and /2 to get only operators
             currentValue = calculate(
                     currentValue,
                     seperatedArgumentList.get(3+(i*2)).charAt(0),

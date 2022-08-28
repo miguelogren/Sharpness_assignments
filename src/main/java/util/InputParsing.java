@@ -7,7 +7,7 @@ public class InputParsing {
         if (input.size()%2 == 0) {
             return false;
         }
-        //TODO: fix - prefix
+        //TODO: fix - prefix, doesn't allow negative values
         boolean checkNumber = true;
 
         for (int i = 0; i < input.size(); ++i) {
